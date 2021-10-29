@@ -1,0 +1,1 @@
+s_smi_auto
