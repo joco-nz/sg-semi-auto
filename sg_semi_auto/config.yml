@@ -1,0 +1,105 @@
+# Include the QtPyVCP default menubar.
+{% include "default_menubar.yml" %}
+
+qtdesigner:
+  ui_file: ( windows.mainwindow.kwargs.ui_file )
+  qss_file: ( application.kwargs.stylesheet )
+
+vcp:
+  name: sg_semi_auto
+  version: v0.0.1
+  author: My Name
+  description: >
+    Put a short description of your VCP here. This will be
+    shown in the VCP Chooser when launching QtPyVCP with the
+    --chooser option.
+
+
+    Examples of what to included here:
+      * VCP Features
+      * Type of machine the VCP is for
+      * Development status
+      * Acknowledgments
+
+data_plugins:
+  status:
+    kwargs:
+      cycle_time: 75
+
+windows:
+
+  mainwindow:
+    # Specify the class to use for the VCP's mainwindow
+    #   Format: package.module:class
+    provider: sg_semi_auto.mainwindow:MyMainWindow
+
+    # Keyword arguments to pass when initializing the class.
+    kwargs:
+      # Specify the mainwindow menubar as the default.
+      menu: ( default_menubar )
+      # Specify the UI file to load the window layout from.
+      ui_file: {{ file.dir }}/ui/mainwindow.ui
+      # Specify a stylesheet to use only for mainwindow.
+      stylesheet: null
+      # Set the window title from from the date in the vcp section above.
+      title: ( vcp.name ) ( vcp.version)
+
+application:
+  kwargs:
+    # Specify the application wide stylesheet.
+    stylesheet: {{ file.dir }}/ui/style.qss
+    custom_fonts:
+        - {{ file.dir }}/resources/fonts/BebasKai.ttf
+
+settings:
+    feeds.table:
+        description: table feed in mm/min
+        default_value: 1000.0
+        persistent: true
+        min_value: 0
+        max_value: 10000
+    feeds.saddle:
+        description: saddle feed in mm/min
+        default_value: 500.0
+        persistent: true
+        min_value: 0
+        max_value: 10000
+    feeds.spindle:
+        description: spindle feed in mm/min
+        default_value: 200.0
+        persistent: true
+        min_value: 0
+        max_value: 2000
+    patternvars.cycles:
+        description: number of times to run the selected pattern
+        default_value: 1
+        persistent: true
+        min_value: 0
+        max_value: 100
+    patternvars.saddle-step:
+        description: amount to step saddle over
+        default_value: 0.25
+        persistent: true
+        min_value: 0
+        max_value: 25
+    patternvars.spindle-step:
+        description: amount to step spindle down
+        default_value: 0.01
+        persistent: true
+        min_value: 0
+        max_value: 2
+    patternvars.table-travel:
+        description: amount of X travel
+        default_value: 100
+        persistent: true
+        min_value: 0
+        max_value: 1000
+    patternvars.saddle-travel:
+        description: amount of Y travel
+        default_value: 25
+        persistent: true
+        min_value: 0
+        max_value: 400
+
+
+        

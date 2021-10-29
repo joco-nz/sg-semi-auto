@@ -1,0 +1,42 @@
+QPushButton[actionName="machine.estop.toggle"]:checked {
+    background: rgb(138, 226, 52);
+    /* rgb(138, 226, 52) */
+}
+
+QPushButton[actionName="machine.power.toggle"]:checked {
+    background:rgb(138, 226, 52);
+}
+
+ActionButton[actionName="program.run"]:enabled{
+    background:rgb(138, 226, 52);
+}
+
+ActionButton[actionName="program.step"]:enabled{
+    background:rgb(138, 226, 52);
+}
+
+ActionButton[actionName="program.pause"]:enabled{
+    background:rgb(252, 233, 79);
+}
+
+ActionButton[actionName="program.abort"]:enabled{
+    background: rgb(239, 41, 41);
+}
+
+.ActionSlider {
+    min-height: 50px;
+    max-height: 50px;
+    /*background: rgb(136, 138, 133);*/
+}
+.ActionSlider::groove:horizontal {
+    border: 1px solid rgb(0,0,0);
+    height: 5px;
+    margin: 0 12px;
+}
+.ActionSlider::handle:horizontal {
+    background: rgb(0,0,0);
+    border: 5px solid rgb(186, 189, 182);
+    width: 23px;
+    height: 100px;
+    margin: -24px -12px;
+}

@@ -1,0 +1,1185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1000</width>
+    <height>800</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="tabPosition">
+       <enum>QTabWidget::South</enum>
+      </property>
+      <property name="tabShape">
+       <enum>QTabWidget::Rounded</enum>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <property name="elideMode">
+       <enum>Qt::ElideNone</enum>
+      </property>
+      <widget class="QWidget" name="cyclesWidget">
+       <attribute name="title">
+        <string>Cycles</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_8">
+        <item row="0" column="2">
+         <widget class="QGroupBox" name="groupBox">
+          <property name="title">
+           <string>Feeds</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_5">
+           <item row="3" column="0">
+            <widget class="QLabel" name="label_7">
+             <property name="text">
+              <string>Spindle Feed</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="label_5">
+             <property name="text">
+              <string>Table Feed</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="0">
+            <widget class="QLabel" name="label_8">
+             <property name="text">
+              <string>Override</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0">
+            <widget class="QLabel" name="label_6">
+             <property name="text">
+              <string>Saddle Feed</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="VCPSettingsSpinBox" name="tablefeed">
+             <property name="settingName" stdset="0">
+              <string>feeds.table</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <widget class="VCPSettingsSpinBox" name="saddlefeed">
+             <property name="settingName" stdset="0">
+              <string>feeds.saddle</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="1">
+            <widget class="VCPSettingsSpinBox" name="spindlefeed">
+             <property name="settingName" stdset="0">
+              <string>feeds.spindle</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="1" colspan="3">
+            <widget class="ActionSlider" name="actionslider">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="actionName" stdset="0">
+              <string>machine.feed-override.set</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="2">
+            <widget class="QLabel" name="label_15">
+             <property name="text">
+              <string>mm/min</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="2">
+            <widget class="QLabel" name="label_16">
+             <property name="text">
+              <string>mm/min</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="2">
+            <widget class="QLabel" name="label_17">
+             <property name="text">
+              <string>min/mm</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QWidget" name="widget_7" native="true">
+          <layout class="QGridLayout" name="gridLayout_7">
+           <item row="0" column="0">
+            <widget class="QLabel" name="label_9">
+             <property name="text">
+              <string>Pattern Number</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="0">
+            <widget class="QLabel" name="label_12">
+             <property name="text">
+              <string>Table Travel</string>
+             </property>
+            </widget>
+           </item>
+           <item row="5" column="0">
+            <widget class="QLabel" name="label_13">
+             <property name="text">
+              <string>Saddle Travel</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QSpinBox" name="pattern">
+             <property name="readOnly">
+              <bool>true</bool>
+             </property>
+             <property name="buttonSymbols">
+              <enum>QAbstractSpinBox::NoButtons</enum>
+             </property>
+             <property name="maximum">
+              <number>4</number>
+             </property>
+             <property name="value">
+              <number>1</number>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0">
+            <widget class="QLabel" name="label_11">
+             <property name="text">
+              <string>Saddle Step</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="label_10">
+             <property name="text">
+              <string>Cycles to run</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="0">
+            <widget class="QLabel" name="label_14">
+             <property name="text">
+              <string>Spindle Step</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="VCPSettingsSpinBox" name="cycles">
+             <property name="maximum">
+              <number>100</number>
+             </property>
+             <property name="value">
+              <number>1</number>
+             </property>
+             <property name="settingName" stdset="0">
+              <string>patternvars.cycles</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <widget class="VCPSettingsDoubleSpinBox" name="ystep">
+             <property name="decimals">
+              <number>3</number>
+             </property>
+             <property name="maximum">
+              <double>25.000000000000000</double>
+             </property>
+             <property name="singleStep">
+              <double>0.250000000000000</double>
+             </property>
+             <property name="settingName" stdset="0">
+              <string>patternvars.saddle-step</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="1">
+            <widget class="VCPSettingsDoubleSpinBox" name="spindlestep">
+             <property name="decimals">
+              <number>4</number>
+             </property>
+             <property name="maximum">
+              <double>2.000000000000000</double>
+             </property>
+             <property name="singleStep">
+              <double>0.001000000000000</double>
+             </property>
+             <property name="settingName" stdset="0">
+              <string>patternvars.spindle-step</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="1">
+            <widget class="VCPSettingsDoubleSpinBox" name="xtravel">
+             <property name="maximum">
+              <double>1000.000000000000000</double>
+             </property>
+             <property name="singleStep">
+              <double>0.010000000000000</double>
+             </property>
+             <property name="settingName" stdset="0">
+              <string>patternvars.table-travel</string>
+             </property>
+            </widget>
+           </item>
+           <item row="5" column="1">
+            <widget class="VCPSettingsDoubleSpinBox" name="ytravel">
+             <property name="maximum">
+              <double>400.000000000000000</double>
+             </property>
+             <property name="singleStep">
+              <double>0.010000000000000</double>
+             </property>
+             <property name="settingName" stdset="0">
+              <string>patternvars.saddle-travel</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="2" column="0" colspan="3">
+         <widget class="VTKBackPlot" name="vtk">
+          <property name="enableProgramTicks" stdset="0">
+           <bool>false</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0">
+         <widget class="QWidget" name="patternWidget" native="true">
+          <layout class="QGridLayout" name="gridLayout_3">
+           <item row="0" column="0">
+            <widget class="QPushButton" name="actionbutton_4">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="icon">
+              <iconset>
+               <normaloff>../resources/sg-continuousfeed.png</normaloff>../resources/sg-continuousfeed.png</iconset>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>80</width>
+               <height>80</height>
+              </size>
+             </property>
+             <property name="checkable">
+              <bool>true</bool>
+             </property>
+             <property name="checked">
+              <bool>true</bool>
+             </property>
+             <property name="autoExclusive">
+              <bool>true</bool>
+             </property>
+             <property name="pattern" stdset="0">
+              <number>1</number>
+             </property>
+             <attribute name="buttonGroup">
+              <string notr="true">patternGroup</string>
+             </attribute>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QPushButton" name="actionbutton_5">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="icon">
+              <iconset>
+               <normaloff>../resources/sg-feed-bothends.png</normaloff>../resources/sg-feed-bothends.png</iconset>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>80</width>
+               <height>80</height>
+              </size>
+             </property>
+             <property name="checkable">
+              <bool>true</bool>
+             </property>
+             <property name="autoExclusive">
+              <bool>true</bool>
+             </property>
+             <property name="pattern" stdset="0">
+              <number>2</number>
+             </property>
+             <attribute name="buttonGroup">
+              <string notr="true">patternGroup</string>
+             </attribute>
+            </widget>
+           </item>
+           <item row="2" column="0">
+            <widget class="QPushButton" name="actionbutton_6">
+             <property name="icon">
+              <iconset>
+               <normaloff>../resources/sg-feed-leftend.png</normaloff>../resources/sg-feed-leftend.png</iconset>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>80</width>
+               <height>80</height>
+              </size>
+             </property>
+             <property name="checkable">
+              <bool>true</bool>
+             </property>
+             <property name="autoExclusive">
+              <bool>true</bool>
+             </property>
+             <property name="pattern" stdset="0">
+              <number>3</number>
+             </property>
+             <attribute name="buttonGroup">
+              <string notr="true">patternGroup</string>
+             </attribute>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <widget class="QPushButton" name="actionbutton_7">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="icon">
+              <iconset>
+               <normaloff>../resources/sg-nofeed.png</normaloff>../resources/sg-nofeed.png</iconset>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>80</width>
+               <height>80</height>
+              </size>
+             </property>
+             <property name="shortcut">
+              <string>Return</string>
+             </property>
+             <property name="checkable">
+              <bool>true</bool>
+             </property>
+             <property name="autoExclusive">
+              <bool>true</bool>
+             </property>
+             <property name="pattern" stdset="0">
+              <number>4</number>
+             </property>
+             <attribute name="buttonGroup">
+              <string notr="true">patternGroup</string>
+             </attribute>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="status">
+       <attribute name="title">
+        <string>Status and Logs</string>
+       </attribute>
+      </widget>
+     </widget>
+    </item>
+    <item>
+     <widget class="QWidget" name="widget" native="true">
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QWidget" name="widget_2" native="true">
+         <layout class="QVBoxLayout" name="verticalLayout_2">
+          <item>
+           <widget class="QGroupBox" name="droGrp">
+            <property name="title">
+             <string>DRO</string>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_2">
+             <item row="1" column="0">
+              <widget class="QLabel" name="label">
+               <property name="text">
+                <string>Spindle</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="2">
+              <widget class="DROLineEdit" name="dro_entry">
+               <property name="referenceType" stdset="0">
+                <number>1</number>
+               </property>
+               <property name="axisNumber" stdset="0">
+                <number>2</number>
+               </property>
+               <property name="inchFormat" stdset="0">
+                <string>%9.4f</string>
+               </property>
+               <property name="millimeterFormat" stdset="0">
+                <string>%10.3f</string>
+               </property>
+               <property name="degreeFormat" stdset="0">
+                <string>%10.2f</string>
+               </property>
+               <property name="latheMode" stdset="0">
+                <number>0</number>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="2">
+              <widget class="DROLineEdit" name="dro_G5x_saddle">
+               <property name="referenceType" stdset="0">
+                <number>1</number>
+               </property>
+               <property name="axisNumber" stdset="0">
+                <number>1</number>
+               </property>
+               <property name="inchFormat" stdset="0">
+                <string>%9.4f</string>
+               </property>
+               <property name="millimeterFormat" stdset="0">
+                <string>%10.3f</string>
+               </property>
+               <property name="degreeFormat" stdset="0">
+                <string>%10.2f</string>
+               </property>
+               <property name="latheMode" stdset="0">
+                <number>0</number>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="0">
+              <widget class="QLabel" name="label_2">
+               <property name="text">
+                <string>Saddle</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QLabel" name="label_3">
+               <property name="text">
+                <string>ABS</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="3">
+              <widget class="QLabel" name="label_4">
+               <property name="text">
+                <string>DTG</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="1">
+              <widget class="DROLabel" name="drolabel">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="referenceType" stdset="0">
+                <number>0</number>
+               </property>
+               <property name="axisNumber" stdset="0">
+                <number>2</number>
+               </property>
+               <property name="inchFormat" stdset="0">
+                <string>%9.4f</string>
+               </property>
+               <property name="millimeterFormat" stdset="0">
+                <string>%10.3f</string>
+               </property>
+               <property name="degreeFormat" stdset="0">
+                <string>%10.2f</string>
+               </property>
+               <property name="latheMode" stdset="0">
+                <number>0</number>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="1">
+              <widget class="DROLabel" name="drolabel_2">
+               <property name="referenceType" stdset="0">
+                <number>0</number>
+               </property>
+               <property name="axisNumber" stdset="0">
+                <number>1</number>
+               </property>
+               <property name="inchFormat" stdset="0">
+                <string>%9.4f</string>
+               </property>
+               <property name="millimeterFormat" stdset="0">
+                <string>%10.3f</string>
+               </property>
+               <property name="degreeFormat" stdset="0">
+                <string>%10.2f</string>
+               </property>
+               <property name="latheMode" stdset="0">
+                <number>0</number>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="3">
+              <widget class="DROLabel" name="drolabel_3">
+               <property name="referenceType" stdset="0">
+                <number>2</number>
+               </property>
+               <property name="axisNumber" stdset="0">
+                <number>2</number>
+               </property>
+               <property name="inchFormat" stdset="0">
+                <string>%9.4f</string>
+               </property>
+               <property name="millimeterFormat" stdset="0">
+                <string>%10.3f</string>
+               </property>
+               <property name="degreeFormat" stdset="0">
+                <string>%10.2f</string>
+               </property>
+               <property name="latheMode" stdset="0">
+                <number>0</number>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="3">
+              <widget class="DROLabel" name="drolabel_4">
+               <property name="referenceType" stdset="0">
+                <number>2</number>
+               </property>
+               <property name="axisNumber" stdset="0">
+                <number>1</number>
+               </property>
+               <property name="inchFormat" stdset="0">
+                <string>%9.4f</string>
+               </property>
+               <property name="millimeterFormat" stdset="0">
+                <string>%10.3f</string>
+               </property>
+               <property name="degreeFormat" stdset="0">
+                <string>%10.2f</string>
+               </property>
+               <property name="latheMode" stdset="0">
+                <number>0</number>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="2">
+              <widget class="StatusLabel" name="statuslabel">
+               <property name="rules" stdset="0">
+                <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:g5x_index?string&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;ch[0]&quot;, &quot;name&quot;: &quot;G5x&quot;}]</string>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="2">
+              <widget class="DROLineEdit" name="dro_G5x_table">
+               <property name="referenceType" stdset="0">
+                <number>1</number>
+               </property>
+               <property name="axisNumber" stdset="0">
+                <number>0</number>
+               </property>
+               <property name="inchFormat" stdset="0">
+                <string>%9.4f</string>
+               </property>
+               <property name="millimeterFormat" stdset="0">
+                <string>%10.3f</string>
+               </property>
+               <property name="degreeFormat" stdset="0">
+                <string>%10.2f</string>
+               </property>
+               <property name="latheMode" stdset="0">
+                <number>0</number>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="1">
+              <widget class="DROLabel" name="drolabel_5">
+               <property name="referenceType" stdset="0">
+                <number>0</number>
+               </property>
+               <property name="axisNumber" stdset="0">
+                <number>0</number>
+               </property>
+               <property name="inchFormat" stdset="0">
+                <string>%9.4f</string>
+               </property>
+               <property name="millimeterFormat" stdset="0">
+                <string>%10.3f</string>
+               </property>
+               <property name="degreeFormat" stdset="0">
+                <string>%10.2f</string>
+               </property>
+               <property name="latheMode" stdset="0">
+                <number>0</number>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="3">
+              <widget class="DROLabel" name="drolabel_6">
+               <property name="referenceType" stdset="0">
+                <number>2</number>
+               </property>
+               <property name="axisNumber" stdset="0">
+                <number>0</number>
+               </property>
+               <property name="inchFormat" stdset="0">
+                <string>%9.4f</string>
+               </property>
+               <property name="millimeterFormat" stdset="0">
+                <string>%10.3f</string>
+               </property>
+               <property name="degreeFormat" stdset="0">
+                <string>%10.2f</string>
+               </property>
+               <property name="latheMode" stdset="0">
+                <number>0</number>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="0">
+              <widget class="QLabel" name="label_18">
+               <property name="text">
+                <string>Table</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QGroupBox" name="limitsGrp">
+            <property name="title">
+             <string>Table Limits</string>
+            </property>
+            <layout class="QGridLayout" name="gridLayout">
+             <item row="1" column="2">
+              <widget class="MDIButton" name="btn_right_table_marker">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="text">
+                <string>Right</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="1">
+              <widget class="MDIButton" name="btn_front_set">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="text">
+                <string>Front</string>
+               </property>
+               <property name="MDICommand" stdset="0">
+                <string>G10L20P0Y0</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0">
+              <widget class="MDIButton" name="btn_left_set">
+               <property name="text">
+                <string>Left</string>
+               </property>
+               <property name="MDICommand" stdset="0">
+                <string>G10L20P0X0</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="MDIButton" name="btn_saddle_front_marker">
+               <property name="text">
+                <string>Back</string>
+               </property>
+               <property name="MDICommand" stdset="0">
+                <string/>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer_2">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QWidget" name="widget_4" native="true">
+         <layout class="QGridLayout" name="gridLayout_4">
+          <item row="0" column="0">
+           <widget class="SubCallButton" name="btn_start">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>START</string>
+            </property>
+            <property name="filename" stdset="0">
+             <string>sg.ngc</string>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="0">
+           <widget class="ActionButton" name="actionbutton_2">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>STOP</string>
+            </property>
+            <property name="actionName" stdset="0">
+             <string>program.abort</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="ActionButton" name="actionbutton_13">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>STEP</string>
+            </property>
+            <property name="actionName" stdset="0">
+             <string>program.step</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="ActionButton" name="actionbutton">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>PAUSE</string>
+            </property>
+            <property name="actionName" stdset="0">
+             <string>program.pause</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="0">
+           <widget class="ActionButton" name="actionbutton_12">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>RESUME</string>
+            </property>
+            <property name="actionName" stdset="0">
+             <string>program.resume</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QWidget" name="widget_5" native="true">
+         <layout class="QVBoxLayout" name="verticalLayout_3">
+          <item>
+           <widget class="ActionButton" name="actionbutton_10">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="styleSheet">
+             <string notr="true"/>
+            </property>
+            <property name="text">
+             <string>E-STOP</string>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <property name="actionName" stdset="0">
+             <string>machine.estop.toggle</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="ActionButton" name="actionbutton_11">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>POWER</string>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <property name="actionName" stdset="0">
+             <string>machine.power.toggle</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="ActionButton" name="actionbutton_9">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>HOME
+ALL</string>
+            </property>
+            <property name="rules" stdset="0">
+             <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:all_axes_homed&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;'HOMED' if ch[0] else 'HOME\\nALL'&quot;, &quot;name&quot;: &quot;Button Text&quot;}, {&quot;channels&quot;: [{&quot;url&quot;: &quot;status:all_axes_homed&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Style Sheet&quot;, &quot;expression&quot;: &quot;'background-color:rgb(138, 226, 52)' if ch[0] else ''&quot;, &quot;name&quot;: &quot;Background Colour&quot;}]</string>
+            </property>
+            <property name="actionName" stdset="0">
+             <string>machine.home.all</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QWidget" name="widget_6" native="true">
+         <layout class="QGridLayout" name="gridLayout_6">
+          <item row="2" column="0">
+           <widget class="ActionButton" name="actionbutton_17">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>Spindle -</string>
+            </property>
+            <property name="actionName" stdset="0">
+             <string>machine.jog.axis:z,neg</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="ActionButton" name="actionbutton_19">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>Spindle +</string>
+            </property>
+            <property name="actionName" stdset="0">
+             <string>machine.jog.axis:z,pos</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="0">
+           <widget class="ActionButton" name="actionbutton_14">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>Table -</string>
+            </property>
+            <property name="actionName" stdset="0">
+             <string>machine.jog.axis:x,neg</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="ActionButton" name="actionbutton_15">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>Table +</string>
+            </property>
+            <property name="actionName" stdset="0">
+             <string>machine.jog.axis:x,pos</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="ActionButton" name="actionbutton_16">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>Saddle -</string>
+            </property>
+            <property name="actionName" stdset="0">
+             <string>machine.jog.axis:y,neg</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="ActionButton" name="actionbutton_18">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>Saddle +</string>
+            </property>
+            <property name="actionName" stdset="0">
+             <string>machine.jog.axis:y,pos</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="0" colspan="2">
+           <widget class="ActionSlider" name="actionslider_2">
+            <property name="maximum">
+             <number>1000</number>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="actionName" stdset="0">
+             <string>machine.jog.set-linear-speed</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionExit">
+   <property name="text">
+    <string>Exit</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
+   </property>
+  </action>
+  <action name="actionOPEN">
+   <property name="text">
+    <string>oPEN</string>
+   </property>
+  </action>
+  <action name="actionOpen">
+   <property name="text">
+    <string>Open</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+  </action>
+  <action name="actionFullscreen">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Fullscreen</string>
+   </property>
+   <property name="shortcut">
+    <string>F11</string>
+   </property>
+  </action>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>VCPSettingsSpinBox</class>
+   <extends>QSpinBox</extends>
+   <header>qtpyvcp.widgets.input_widgets.setting_slider</header>
+  </customwidget>
+  <customwidget>
+   <class>ActionSlider</class>
+   <extends>QSlider</extends>
+   <header>qtpyvcp.widgets.input_widgets.action_slider</header>
+  </customwidget>
+  <customwidget>
+   <class>VCPSettingsDoubleSpinBox</class>
+   <extends>QDoubleSpinBox</extends>
+   <header>qtpyvcp.widgets.input_widgets.setting_slider</header>
+  </customwidget>
+  <customwidget>
+   <class>DROLineEdit</class>
+   <extends>QLineEdit</extends>
+   <header>qtpyvcp.widgets.input_widgets.dro_line_edit</header>
+  </customwidget>
+  <customwidget>
+   <class>StatusLabel</class>
+   <extends>QLabel</extends>
+   <header>qtpyvcp.widgets.display_widgets.status_label</header>
+  </customwidget>
+  <customwidget>
+   <class>SubCallButton</class>
+   <extends>QPushButton</extends>
+   <header>qtpyvcp.widgets.button_widgets.subcall_button</header>
+  </customwidget>
+  <customwidget>
+   <class>MDIButton</class>
+   <extends>QPushButton</extends>
+   <header>qtpyvcp.widgets.button_widgets.mdi_button</header>
+  </customwidget>
+  <customwidget>
+   <class>VTKBackPlot</class>
+   <extends>QWidget</extends>
+   <header>qtpyvcp.widgets.display_widgets.vtk_backplot.vtk_backplot</header>
+  </customwidget>
+  <customwidget>
+   <class>DROLabel</class>
+   <extends>QLabel</extends>
+   <header>qtpyvcp.widgets.display_widgets.dro_label</header>
+  </customwidget>
+  <customwidget>
+   <class>ActionButton</class>
+   <extends>QPushButton</extends>
+   <header>qtpyvcp.widgets.button_widgets.action_button</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>actionbutton_4</tabstop>
+  <tabstop>actionbutton_5</tabstop>
+  <tabstop>actionbutton_6</tabstop>
+  <tabstop>actionbutton_7</tabstop>
+  <tabstop>pattern</tabstop>
+  <tabstop>cycles</tabstop>
+  <tabstop>ystep</tabstop>
+  <tabstop>spindlestep</tabstop>
+  <tabstop>xtravel</tabstop>
+  <tabstop>ytravel</tabstop>
+  <tabstop>tablefeed</tabstop>
+  <tabstop>saddlefeed</tabstop>
+  <tabstop>spindlefeed</tabstop>
+  <tabstop>actionslider</tabstop>
+  <tabstop>vtk</tabstop>
+  <tabstop>dro_entry</tabstop>
+  <tabstop>dro_G5x_saddle</tabstop>
+  <tabstop>btn_right_table_marker</tabstop>
+  <tabstop>btn_front_set</tabstop>
+  <tabstop>btn_start</tabstop>
+  <tabstop>actionbutton</tabstop>
+  <tabstop>actionbutton_13</tabstop>
+  <tabstop>actionbutton_12</tabstop>
+  <tabstop>actionbutton_2</tabstop>
+  <tabstop>actionbutton_10</tabstop>
+  <tabstop>actionbutton_11</tabstop>
+  <tabstop>actionbutton_9</tabstop>
+  <tabstop>actionbutton_14</tabstop>
+  <tabstop>actionbutton_15</tabstop>
+  <tabstop>actionbutton_16</tabstop>
+  <tabstop>actionbutton_18</tabstop>
+  <tabstop>actionbutton_17</tabstop>
+  <tabstop>actionbutton_19</tabstop>
+  <tabstop>tabWidget</tabstop>
+ </tabstops>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>btn_start</sender>
+   <signal>clicked()</signal>
+   <receiver>vtk</receiver>
+   <slot>clearLivePlot()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>412</x>
+     <y>516</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>499</x>
+     <y>331</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <buttongroups>
+  <buttongroup name="patternGroup"/>
+ </buttongroups>
+</ui>
