@@ -1,0 +1,23 @@
+%
+(3 - Single Side Shift Pattern)
+o<pattern3> sub
+#<xtravel> = ABS[#1]
+#<ystep> = #2
+#<shiftside> = #3
+#<tablefeed> = #4
+#<saddlefeed> = #5
+#<spindlefeed> = #6
+
+o310 if [#<shiftside> EQ 1]
+  (print, in pattern3 - shift 1)
+  G1 X-#<xtravel>  F#<tablefeed>
+  G1 X#<xtravel>  F#<tablefeed>
+o310 else
+  (print, in pattern3 - shift 0)
+  G1 X#<xtravel>  F#<tablefeed>
+  G1 X-#<xtravel>  F#<tablefeed>
+o310 endif
+G1 Y#<ystep> F#<saddlefeed>
+o<pattern3> endsub
+M2
+%

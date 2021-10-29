@@ -1,0 +1,13 @@
+%
+(1 -  Roughing Pattern)
+o<pattern1> sub
+#<xtravel> = #1
+#<ystep> = #2
+#<tablefeed> = #3
+#<saddlefeed> = #4
+#<spindlefeed> = #5
+
+G1 X#<xtravel> Y#<ystep> F#<tablefeed>
+o<pattern1> endsub
+M2
+%

@@ -1,0 +1,72 @@
+(main calc for oscillatoin and table Y travel)
+(Call syntax is these paremters in order)
+(cycles - number of full passed on the Y/Z to take)
+(ytravel - max distance to travel in Y)
+(xtravel - max distance to cover in X, this is the table oscillation)
+(ystep - the step over in Y)
+(pattern - the grind pattern to use.)
+(shiftside - for the single side shift, 0 = left, 1 = right)
+o<sg> sub
+#<cycles> = #1 (=1)
+#<ytravel> = #2 (=0)
+#<xtravel> = #3 (=0)
+#<ystep> = #4 (=0)
+#<pattern> = #5 (=1)
+#<shiftside> = #6 (=1)
+#<tablefeed> = #7 (=100)
+#<saddlefeed> = #8 (=100)
+#<spindlefeed> = #9 (=100)
+
+G90
+G54
+(get to start position, also deal with patern 3 special case start)
+o200 if [#<pattern> EQ 3 AND #<shiftside> EQ 1]
+  (print, Pattern 3 and Shiftside 1)
+  G0 X#<xtravel> Y0
+o200 else
+  G0 X0 Y0
+o200 endif
+G91
+
+#<iteration> = 0
+#<parts> = ABS[FUP[#<ytravel> / #<ystep>]]
+o110 do
+  #<iteration> = [#<iteration> + 1]
+
+  o115 repeat [#<parts>]
+
+    (set direction of table X travel)
+    o120 if [#<_x> EQ 0]
+      #<xtravel> = ABS[#<xtravel>]
+    o120 else
+      #<xtravel> = -#<xtravel>
+    o120 endif
+
+    (set direction of Y travel)
+    o130 if [#<_y> GE #<ytravel>]
+      #<ystep> = -#<ystep>
+    o130 endif
+
+    o140 if [#<_y> LE 0]
+      #<ystep> = ABS[#<ystep>]
+    o140 endif
+
+    (ensure in relative mode)
+    G91
+
+    o150 if [#<pattern> EQ 1]
+      o<pattern1> call [#<xtravel>] [#<ystep>] [#<tablefeed>] [#<saddlefeed>] [#<spindlefeed>]
+    o150 elseif [#<pattern> EQ 2]
+      o<pattern2> call [#<xtravel>] [#<ystep>] [#<tablefeed>] [#<saddlefeed>] [#<spindlefeed>]
+    o150 elseif [#<pattern> EQ 3]
+      (print, call pattern 3)
+      o<pattern3> call [#<xtravel>] [#<ystep>] [#<shiftside>] [#<tablefeed>] [#<saddlefeed>] [#<spindlefeed>]
+    o150 else
+      o<pattern4> call [#<xtravel>]  [#<tablefeed>] [#<spindlefeed>]
+    o150 endif
+
+  o115 endrepeat
+o110 while [#<iteration> LT #<cycles>]
+o<sg> endsub
+
+M2

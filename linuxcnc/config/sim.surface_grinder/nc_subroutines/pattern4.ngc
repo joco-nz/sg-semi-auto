@@ -1,0 +1,11 @@
+%
+(4 - Plunge)
+o<pattern4> sub
+#<xtravel> = #1
+#<tablefeed> = #2
+#<spindlefeed> = #3
+
+G1 X#<xtravel> F#<tablefeed>
+o<pattern4> endsub
+M2
+%

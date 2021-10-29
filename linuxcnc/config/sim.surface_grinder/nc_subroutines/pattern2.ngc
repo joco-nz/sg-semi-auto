@@ -1,0 +1,14 @@
+%
+(2 -  Both Side Shift Pattern)
+o<pattern2> sub
+#<xtravel> = #1
+#<ystep> = #2
+#<tablefeed> = #3
+#<saddlefeed> = #4
+#<spindlefeed> = #5
+
+G1 X#<xtravel>  F#<tablefeed>
+G1 Y#<ystep> F#<saddlefeed>
+o<pattern2> endsub
+M2
+%
